@@ -1,5 +1,5 @@
 import React from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {Button, Grid, Text, Input} from "../elements";
 import CreateIcon from '@material-ui/icons/Create';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -31,7 +31,7 @@ const Card = (props) => {
                         history.push(`/write/${props.id}`);
                     }}/>
                     <DeleteIcon
-                        onClick={deletePost}       
+                        onClick={deletePost}
                     />
                 </Grid>
             </Grid>
