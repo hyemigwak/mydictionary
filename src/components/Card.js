@@ -12,7 +12,9 @@ const Card = (props) => {
     const post_id = props.id
 
     const deletePost = () => {
-        dispatch(postActions.deletePostFB(post_id))
+        dispatch(postActions.deletePostFB(post_id));
+        window.alert("삭제되었습니다!");
+        history.push("/");
     }
 
     return (

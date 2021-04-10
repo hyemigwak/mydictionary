@@ -37,7 +37,7 @@ const deletePostFB = (post_id) => {
         const postDB = firestore.collection("post");
         postDB.doc(post_id).delete().then(()=>{
             console.log("파이어베이스에서 지웠다능 꺄륵")
-            dispatch(deletePost(post_id))
+            dispatch(deletePost(post_id));
             history.replace("/");
         }).catch((error) => {
             console.error("파이어베이스 에러가 났다!", error);
@@ -76,7 +76,6 @@ const addPostFB = (word,description,example) => {
         postDB.add(_post).then((doc)=> {
             let post = {..._post, id:doc.id};
             console.log(post);
-
             dispatch(addPost(post));
             history.replace("/");
         })
