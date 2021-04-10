@@ -18,13 +18,13 @@ const Card = (props) => {
     return (
         <React.Fragment>
             <Grid padding="16px" bg="#ffffff" margin="10px 0px">
-                <Text size="12px" bold>Word</Text>
+                <Text size="12px" bold>이름</Text>
                 <Text>{word}</Text>
-                <Text size="12px" bold>Description</Text>
+                <Text size="12px" bold>설명</Text>
                 <Text>{description}</Text>
                 <Grid is_flex>
                     <Grid>
-                        <Text size="12px" bold>Example</Text>
+                        <Text size="12px" bold>하고싶은 말</Text>
                         <Text color="#8b2fbb">{example}</Text>
                     </Grid>
                     <CreateIcon onClick={()=>{

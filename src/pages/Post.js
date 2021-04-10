@@ -23,7 +23,7 @@ const Post = (props) => {
     },[])
 
     return (
-    <div>
+    <div style={{width: "30%", margin:"0 auto"}}>
         <Grid padding="16px" bg="#f4d5d5">
             <Grid>
                 <Text bold size="30px">My Dictionary</Text>
@@ -52,9 +52,9 @@ const Post = (props) => {
 }
 
 const Btn = styled.div`
-    position: fixed;
-    bottom: 20%;
-    left: 83%;
+    position: absolute;
+    top: 4%;
+    left: 60%;
 `;
 
 

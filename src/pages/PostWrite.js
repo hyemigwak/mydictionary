@@ -40,35 +40,37 @@ const PostWrite = (props) => {
 
     return(
         <React.Fragment>
-            <Grid padding="16px" bg="#f4d5d5">
-                <Grid>
-                    <Text bold size="30px">
-                        {is_edit? "단어 수정하기" : "단어 추가하기"}</Text>
+            <div style={{width: "30%", margin:"200px auto"}}>
+                <Grid padding="16px" bg="#f4d5d5">
+                    <Grid>
+                        <Text bold size="30px">
+                            {is_edit? "단어 수정하기" : "단어 추가하기"}</Text>
+                    </Grid>
+                    <Grid bg="#ffffff">
+                        <Text bold size="12px">이름</Text>
+                        <Input placeholder="이름을 입력해주세요!" value={word}
+                        _onChange={(e) => {
+                            setWord(e.target.value);
+                        }}></Input>
+                    </Grid >
+                    <Grid bg="#ffffff">
+                        <Text bold size="12px">설명</Text>
+                        <Input placeholder="설명을 입력해주세요!" value={description}
+                        _onChange={(e)=>{
+                            setDesc(e.target.value);
+                        }}></Input>
+                    </Grid>
+                    <Grid bg="#ffffff">
+                        <Text bold size="12px">하고싶은말</Text>
+                        <Input placeholder="하고싶은말을 입력해주세요!" value={example} _onChange={(e)=>{
+                            setExam(e.target.value);
+                        }}></Input>
+                    </Grid>
+                    {is_edit? (<Button margin="15px 0px" _onClick={editPost}>수정하기</Button>
+                    ):(
+                    <Button margin="15px 0px" _onClick={setPost}>추가하기</Button>)}
                 </Grid>
-                <Grid bg="#ffffff">
-                    <Text bold size="12px">Word</Text>
-                    <Input placeholder="단어를 입력해주세요!" value={word}
-                    _onChange={(e) => {
-                        setWord(e.target.value);
-                    }}></Input>
-                </Grid >
-                <Grid bg="#ffffff">
-                    <Text bold size="12px">Description</Text>
-                    <Input placeholder="설명을 입력해주세요!" value={description}
-                    _onChange={(e)=>{
-                        setDesc(e.target.value);
-                    }}></Input>
-                </Grid>
-                <Grid bg="#ffffff">
-                    <Text bold size="12px">Example</Text>
-                    <Input placeholder="예시를 입력해주세요!" value={example} _onChange={(e)=>{
-                        setExam(e.target.value);
-                    }}></Input>
-                </Grid>
-                {is_edit? (<Button margin="15px 0px" _onClick={editPost}>수정하기</Button>
-                ):(
-                <Button margin="15px 0px" _onClick={setPost}>추가하기</Button>)}
-            </Grid>
+            </div>
         </React.Fragment>
     );
 }
